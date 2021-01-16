@@ -1,0 +1,362 @@
+backend:
+  name: github
+  repo: MussadiqKhan/visit-clarion
+  #repo: ali-baker/huss-gatsby
+media_folder: "src/images"
+public_folder: "../src/images"
+media_folder_relative: true
+
+collections:
+  - name: dining
+    label: Stay and Eat
+    folder: dining
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: path, label: Path (post url) }
+      - { name: date, label: Date, widget: datetime }
+      - label: "Tags"
+        name: "categories"
+        widget: "list"
+        field: { label: "Category", name: "category", widget: "string" }
+      - { name: contact, label: Contact Number, widget: string }
+      - { name: address, label: Address, widget: string }
+      - { name: website, label: Website, widget: string }
+      - {
+          label: "Education Page",
+          name: "diningcategory",
+          widget: "hidden",
+          default: true,
+        }
+      - {
+          label: "Featured Image",
+          name: "blogimage",
+          widget: "image",
+          default: "eat.jpg",
+        }
+      - { name: body, label: Body, widget: markdown }
+  - name: events
+    label: Events
+    folder: events
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: path, label: Path (post url) }
+      - { name: date, label: Date, widget: datetime }
+      - { name: contact, label: Contact Number, widget: string }
+      - { name: address, label: Address, widget: string }
+      - { name: website, label: Website, widget: string }
+      - {
+          label: "Event Page",
+          name: "eventpage",
+          widget: "hidden",
+          default: true,
+        }
+      - {
+          label: "Featured Image",
+          name: "eventimage",
+          widget: "image",
+          default: "",
+        }
+      - { name: body, label: Body, widget: markdown }
+  - name: blog
+    label: Blog
+    folder: blog
+    create: true
+    fields:
+      - { name: blogtitle, label: Blog Title }
+      - { name: path, label: Path (post url) }
+      - { name: date, label: Date, widget: datetime }
+      - { name: author, label: Author, widget: string }
+      - {
+          label: "Blog Page",
+          name: "blogpage",
+          widget: "hidden",
+          default: true,
+        }
+      - {
+          label: "Featured Image",
+          name: "mainblogimage",
+          widget: "image",
+          default: "wholesale.png",
+        }
+      - { name: body, label: Body, widget: markdown }
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Index Page"
+        name: "Index Page"
+        file: "src/markdown-pages/index.md"
+        fields:
+          - { label: VideoLink, name: video, widget: string }
+          - {
+              label: "Featured Image",
+              name: "thumbnail",
+              widget: "image",
+              default: "wholesale.png",
+            }
+          - {
+              label: "Banner Logo",
+              name: "bannerlogo",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - {
+              label: "Hotel Background",
+              name: "hotelbackground",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - { label: Hotel Text, name: hoteltext, widget: string }
+
+          - {
+              label: "Eateries Background",
+              name: "eaterybackground",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - { label: Eatery Text, name: eaterytext, widget: string }
+
+          - {
+              label: "Event Background",
+              name: "eventbackground",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - { label: Event Text, name: eventtext, widget: string }
+      - label: "Eatery Page"
+        name: "Eatery Page"
+        file: "src/markdown-pages/eat.md"
+        fields:
+          - {
+              label: "Featured Image",
+              name: "mainImage",
+              widget: "image",
+              default: "wholesale.png",
+            }
+          - { label: Banner Text, name: bannertext, widget: string }
+          - { label: Hero Title, name: herotitle, widget: string }
+          - { label: Hero Text, name: herotext, widget: text }
+          - {
+              label: "Hero Image",
+              name: "heroimage",
+              widget: "image",
+              default: "wholesale.png",
+            }
+          - {
+              label: "Dining Image",
+              name: "diningimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - { label: Dining Text, name: diningtext, widget: string }
+          - { label: Dining Link, name: dininglink, widget: string }
+          - {
+              label: "Breweries Image",
+              name: "breweriesimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - { label: Breweries Text, name: breweriestext, widget: string }
+          - { label: Breweries Link, name: brewerieslink, widget: string }
+
+          - {
+              label: "Wineries Image",
+              name: "wineriesimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - { label: Wineries Text, name: wineriestext, widget: string }
+          - { label: Wineries Link, name: winerieslink, widget: string }
+          - {
+              label: "Distilleries Image",
+              name: "distilleriesimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - { label: Distilleries Text, name: distilleriestext, widget: string }
+          - { label: Distilleries Link, name: distillerieslink, widget: string }
+
+      - label: "Events Page"
+        name: "Events Page"
+        file: "src/markdown-pages/events.md"
+        fields:
+          - {
+              label: "Featured Image",
+              name: "eventBannerImage",
+              widget: "image",
+              default: "wholesale.png",
+            }
+          - { label: Banner Text, name: bannertext, widget: string }
+          
+      - label: "Lodging Page"
+        name: "Lodging Page"
+        file: "src/markdown-pages/stay.md"
+        fields:
+          - {
+              label: "Featured Image",
+              name: "bannerImage",
+              widget: "image",
+              default: "wholesale.png",
+            }
+          - { label: Banner Text, name: bannertext, widget: string }
+          - { label: Hero Title, name: herotitle, widget: string }
+          - { label: Hero Text, name: herotext, widget: text }
+          - {
+              label: "Hero Image",
+              name: "heroimage",
+              widget: "image",
+              default: "wholesale.png",
+            }
+          - {
+              label: "Hotels and Motels Image",
+              name: "hotelsnmotelsimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - {
+              label: Hotels and Motels Text,
+              name: hotelsnmotelstext,
+              widget: string,
+            }
+          - {
+              label: Hotels and Motels Link,
+              name: hotelsnmotelslink,
+              widget: string,
+            }
+          - {
+              label: "Apartment Rental Image",
+              name: "apartmentimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - {
+              label: Apartment Rental Text,
+              name: apartmenttext,
+              widget: string,
+            }
+          - {
+              label: Apartment Rental Link,
+              name: apartmentlink,
+              widget: string,
+            }
+          - {
+              label: "Inn Image",
+              name: "Innimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - { label: Inn Text, name: Inntext, widget: string }
+          - { label: Inn Link, name: Innlink, widget: string }
+
+          - {
+              label: "Cabins, Cottages & Housing Image",
+              name: "cabinimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - {
+              label: Cabins,
+              Cottages & Housing Text,
+              name: cabintext,
+              widget: string,
+            }
+          - {
+              label: Cabins,
+              Cottages & Housing Link,
+              name: cabinlink,
+              widget: string,
+            }
+          - {
+              label: "Campgrounds Image",
+              name: "campimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - { label: Campgrounds Text, name: camptext, widget: string }
+          - { label: Campgrounds Link, name: camplink, widget: string }
+
+          - {
+              label: "Transient Boat Dockage Image",
+              name: "boatimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - {
+              label: Transient Boat Dockage Text,
+              name: boattext,
+              widget: string,
+            }
+          - {
+              label: Transient Boat Dockage Link,
+              name: boatlink,
+              widget: string,
+            }
+
+      - label: "Partners Spotlight"
+        name: "Partners Spotlight"
+        file: "src/markdown-pages/partners-spotlight.md"
+        fields:
+          - {
+              label: "First Partner Image",
+              name: "firstpartnetimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - {
+              label: First Partner Title,
+              name: firstpartnertitle,
+              widget: string,
+            }
+          - {
+              label: First Partner Description,
+              name: firstpartnerdesc,
+              widget: text,
+            }
+          - {
+              label: First Partner Link,
+              name: firstpartnerlink,
+              widget: string,
+            }
+          - {
+              label: "Second Partner Image",
+              name: "secondpartnetimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - {
+              label: Second Partner Title,
+              name: secondpartnertitle,
+              widget: string,
+            }
+          - {
+              label: Second Partner Description,
+              name: secondpartnerdesc,
+              widget: text,
+            }
+          - {
+              label: Second Partner Link,
+              name: secondpartnerlink,
+              widget: string,
+            }
+          - {
+              label: "Third Partner Image",
+              name: "thirdpartnetimage",
+              widget: "image",
+              default: "headerlogo.png",
+            }
+          - {
+              label: Third Partner Title,
+              name: thirdpartnertitle,
+              widget: string,
+            }
+          - {
+              label: Third Partner Description,
+              name: thirdpartnerdesc,
+              widget: text,
+            }
+          - {
+              label: Third Partner Link,
+              name: thirdpartnerlink,
+              widget: string,
+            }
